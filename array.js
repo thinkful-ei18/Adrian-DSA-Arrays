@@ -8,3 +8,5 @@ class Array {
     this.ptr = memory.allocate(this.length);
   }
 }
+
+module.exports = Array;
