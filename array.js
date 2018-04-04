@@ -12,14 +12,14 @@ class Array {
 
   push(value) {
     if (this.length >= this._capacity) {
-      this._resize(this.length + 1) * Array.SIZE_RATIO;
+      this._resize((this.length + 1) * Array.SIZE_RATIO);
     }
     memory.set(this.ptr + this.length, value); // change array item value at ptr
     this.length++; // then increase length
   }
 
   _resize(size) {
-    const oldPtr = this.ptr; // assign oldPtr to current ptr so we can swap space
+    const oldPtr = this.ptr; // assign oldPtr to current ptr so we dont previous ptr
     this.ptr = memory.allocate(size); // get new ptr from memory
     if (this.ptr === null) {
       throw new Error('Out of memory'); // throw error when we run out of space
