@@ -33,7 +33,16 @@ class Array {
     if (index < 0 || index >= this.length) {
       throw new Error('Index error');
     }
-    return memory.get(this.ptr + index);s
+    return memory.get(this.ptr + index);
+  }
+
+  pop () {
+    if (this.length === 0) {
+      throw new Error('Index error');
+    }
+    const value = memory.get(this.ptr + this.length - 1);
+    this.length--;
+    return value;
   }
 
 }
