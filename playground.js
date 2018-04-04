@@ -4,4 +4,8 @@ const Array = require('./array');
 
 let testArray = new Array();
 
-console.log(testArray.push(5));
+testArray.push(5);
+testArray.push(10);
+console.log(testArray);
+testArray.remove(1);
+console.log(testArray);
