@@ -28,6 +28,14 @@ class Array {
     memory.free(oldPtr); // free up unused memory
     this._capacity = size;
   }
+
+  get(index) {
+    if (index < 0 || index >= this.length) {
+      throw new Error('Index error');
+    }
+    return memory.get(this.ptr + index);s
+  }
+
 }
 
 Array.SIZE_RATIO = 3;
