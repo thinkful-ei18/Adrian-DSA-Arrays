@@ -40,7 +40,4 @@ function sandbox() {
   // The resize function ensures memory capacity will be allocated as needed, moving the pointer when necessary.
 }
 
-
-
-
 sandbox();
